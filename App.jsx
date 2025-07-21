@@ -1,11 +1,15 @@
-
-import React from 'react';
+import React, { useState } from 'react';
+import FCFSForm from './components/FCFSForm';
+import FCFSResult from './components/FCFSResult';
 
 function App() {
+  const [processData, setProcessData] = useState([]);
+
   return (
-    <div className="app">
-      <h1>Operating System Simulator</h1>
-      <p>Coming soon: CPU Scheduling and Memory Management Algorithms</p>
+    <div className="App">
+      <h1>OS Scheduler Simulator</h1>
+      <FCFSForm onSubmit={setProcessData} />
+      <FCFSResult processes={processData} />
     </div>
   );
 }
